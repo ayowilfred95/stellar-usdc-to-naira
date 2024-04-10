@@ -1,0 +1,29 @@
+# dev.assets.yaml
+assets:
+  - schema: stellar
+    code: NGNC
+    issuer: GD5PP4ADQROLPAU3XLLJDWAYILWXQF2TNNFIIWMVGN32XAV2ION7G7U5
+    distribution_account: GAJT5BIHTI5WSFXSIOOVBJFZ5HHK6XILO3HR2NSAHJE2EXJULP4NJTGB
+    significant_decimals: 2
+    sep24_enabled: true
+    deposit:
+      enabled: true
+    withdraw:
+      enabled: true
+  - schema: iso4217
+    code: USD
+    significant_decimals: 2
+    deposit:
+      enabled: true
+    withdraw:
+      enabled: true
+  # Optional support for XLM
+  - schema: stellar
+    code: native
+    distribution_account: GBLSAHONJRODSFTLOV225NZR4LHICH63RIFQTQN37L5CRTR2IMQ5UEK7
+    significant_decimals: 7
+    sep24_enabled: true
+    deposit:
+      enabled: true
+    withdraw:
+      enabled: true

@@ -1,0 +1,43 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model SourceAccount {
+  id             String        @id
+  username       String        @unique
+  stellarAccount String
+  stellarSecret  String
+  keystore       String
+  balance        String?       @default("0")
+  createdUsers   User[]
+  Distributor    Distributor[]
+}
+
+model User {
+  id                 String         @id
+  userStellarAccount String
+  userStellarSecret  String
+  balance            String?        @default("0")
+  asset_type         String?
+  username           String         @unique
+  sourceAccountId    String?
+  sourceAccount      SourceAccount? @relation(fields: [sourceAccountId], references: [id])
+}
+
+model Distributor{
+  id                 String         @id
+  distributorStellarAccount String
+  distributorStellarSecret  String
+  balance            String?        @default("0")
+  asset_type         String?
+  username           String         @unique
+  sourceAccountId    String?
+  sourceAccount      SourceAccount? @relation(fields: [sourceAccountId], references: [id])
+}

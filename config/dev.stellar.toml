@@ -1,0 +1,40 @@
+# dev.stellar.toml
+# Authentication public key (address)
+ACCOUNTS = ["GAJT5BIHTI5WSFXSIOOVBJFZ5HHK6XILO3HR2NSAHJE2EXJULP4NJTGB"]
+VERSION = "0.1.0"
+# Authentication public key (address)
+SIGNING_KEY = "SB4MPBMCVSNI37OC6VJQSMEODKFQK6OVZBX2I3R4KR225XELNVMDZGWM"
+NETWORK_PASSPHRASE = "Test SDF Network ; September 2015"
+
+
+TRANSFER_SERVER_SEP0024 = "http://localhost:8080/sep24"
+TRANSFER_SERVER = "http://localhost:8080/sep6"
+WEB_AUTH_ENDPOINT = "http://localhost:8080/auth"
+
+#KYC
+KYC_SERVER = "http://localhost:8080/kyc"
+
+# Add support for NGNC
+[[CURRENCIES]]
+code = "NGNC"
+issuer = "GD5PP4ADQROLPAU3XLLJDWAYILWXQF2TNNFIIWMVGN32XAV2ION7G7U5"
+status = "test"
+is_asset_anchored = false
+desc = "USD Coin issued by Circle"
+
+
+
+
+# Optionally, add support for XLM
+[[CURRENCIES]]
+code = "native"
+status = "test"
+is_asset_anchored = false
+anchor_asset_type = "crypto"
+desc = "XLM, the native token of the Stellar network."
+
+
+[DOCUMENTATION]
+ORG_NAME = "NUPAT"
+ORG_URL = "https://stellar.org"
+ORG_DESCRIPTION = "The Stellar Development Foundation (SDF) is a non-profit organization whose mission is to create equitable access to the global financial system."
